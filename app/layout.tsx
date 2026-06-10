@@ -50,6 +50,12 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.ico",
   },
+  other: {
+    "geo.region": "SA",
+    "geo.placename": "Saudi Arabia",
+    "geo.position": "24.7136;46.6753",
+    "ICBM": "24.7136, 46.6753",
+  },
 };
 
 export default function RootLayout({
