@@ -1,4 +1,3 @@
-'use client';
 
 import React from 'react';
 
@@ -19,17 +18,7 @@ const AboutSection: React.FC = () => {
           </p>
         </div>
       </div>
-      <style jsx>{`
-        .about-content {
-          margin-top: 2rem;
-          line-height: 1.8;
-          font-size: 1.2rem;
-          max-width: 800px;
-        }
-        p {
-          margin-bottom: 1.5rem;
-        }
-      `}</style>
+      
     </section>
   );
 };
