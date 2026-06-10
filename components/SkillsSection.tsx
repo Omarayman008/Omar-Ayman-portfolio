@@ -15,7 +15,7 @@ const EXPERTISE = [
 const SKILLS_CATEGORIES = [
   {
     title: "Core Development",
-    items: ["HTML5", "CSS3", "Vanilla JavaScript", "Node.js", "Python", "Java", "C++", "C#", "Next.js", "Tailwind CSS", "Architecture"],
+    items: ["HTML5", "CSS3", "Vanilla JavaScript", "Node.js", "Python", "Java", "C++", "C#", "Next.js", "Tailwind CSS", "Architecture", "TypeScript", "React"],
     description: "Full-cycle engineering from high-level architecture to clean implementation."
   },
   {
@@ -25,7 +25,7 @@ const SKILLS_CATEGORIES = [
   },
   {
     title: "Systems & DevOps",
-    items: ["Docker", "Redis", "Git", "Supabase", "SQL", "Maven", "Unity Engine", "Windows Expert"],
+    items: ["Docker", "Redis", "Git", "Supabase", "SQL", "Maven", "Unity Engine", "Windows Expert", "Godot", "Cache", "CI/CD", "DB Index", "Garbage Collection"],
     description: "Managing operational environments and low-level system interactions."
   },
   {

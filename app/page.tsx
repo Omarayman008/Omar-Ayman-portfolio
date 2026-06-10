@@ -55,8 +55,9 @@ const DEFAULT_PROJECTS: Project[] = [
 ];
 
 export default function Home() {
-  const [projects, setProjects] = useState<Project[]>(DEFAULT_PROJECTS);
+  const [projects, setProjects] = useState<Project[]>([]);
   const [showAdmin, setShowAdmin] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     fetchProjects();
@@ -68,7 +69,7 @@ export default function Home() {
 
   const fetchProjects = async () => {
     try {
-      const res = await fetch('/api/projects');
+      const res = await fetch('/api/projects', { cache: 'no-store' });
       const data = await res.json();
       if (Array.isArray(data) && data.length > 0) {
         // Map database biome_color and character_type back to camelCase
@@ -78,9 +79,14 @@ export default function Home() {
           characterType: p.character_type
         }));
         setProjects(mappedData);
+      } else {
+        setProjects(DEFAULT_PROJECTS);
       }
     } catch (error) {
       console.error('Fetch error:', error);
+      setProjects(DEFAULT_PROJECTS);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -126,6 +132,34 @@ export default function Home() {
       console.error('Update error:', error);
     }
   };
+
+  if (isLoading) {
+    return (
+      <main className="loading-screen">
+        <div className="loader-text">INITIALIZING_SYSTEM_DATA...</div>
+        <style jsx>{`
+          .loading-screen {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #050505;
+          }
+          .loader-text {
+            color: #bdff90;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1.2rem;
+            letter-spacing: 4px;
+            animation: pulse 1s infinite alternate;
+          }
+          @keyframes pulse {
+            0% { opacity: 0.4; transform: scale(0.98); }
+            100% { opacity: 1; transform: scale(1); text-shadow: 0 0 20px #bdff90; }
+          }
+        `}</style>
+      </main>
+    );
+  }
 
   return (
     <main>
