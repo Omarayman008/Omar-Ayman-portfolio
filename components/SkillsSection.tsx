@@ -15,7 +15,7 @@ const EXPERTISE = [
 const SKILLS_CATEGORIES = [
   {
     title: "Core Development",
-    items: ["HTML5", "CSS3", "Vanilla JavaScript", "Node.js", "Python", "Java", "C++", "C#", "Next.js", "Tailwind CSS", "Architecture", "TypeScript", "React"],
+    items: ["HTML5", "CSS3", "Vanilla JavaScript", "Node.js", "Python", "Java", "C++", "C#", "Next.js", "Tailwind CSS", "Architecture", "TypeScript", "React", "SEO", "GEO"],
     description: "Full-cycle engineering from high-level architecture to clean implementation."
   },
   {
