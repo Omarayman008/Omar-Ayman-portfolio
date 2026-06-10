@@ -40,7 +40,8 @@ const DEFAULT_PROJECTS = [
   }
 ];
 
-export default async function Home({ searchParams }: { searchParams: { edit?: string } }) {
+export default async function Home(props: { searchParams: Promise<{ edit?: string }> }) {
+  const searchParams = await props.searchParams;
   let initialProjects = [];
   try {
     const result = await query('SELECT * FROM projects ORDER BY level ASC');
